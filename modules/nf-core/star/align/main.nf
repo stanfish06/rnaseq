@@ -14,6 +14,7 @@ process STAR_ALIGN {
     val star_ignore_sjdbgtf
     val seq_platform
     val seq_center
+    val align_mode
 
     output:
     tuple val(meta), path('*Log.final.out')   , emit: log_final
@@ -56,6 +57,7 @@ process STAR_ALIGN {
         --readFilesIn ${reads1.join(",")} ${reads2.join(",")} \\
         --runThreadN $task.cpus \\
         --outFileNamePrefix $prefix. \\
+	--alignEndsType $align_mode \\
         $out_sam_type \\
         $ignore_gtf \\
         $attrRG \\

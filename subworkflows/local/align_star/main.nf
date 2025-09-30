@@ -34,6 +34,7 @@ workflow ALIGN_STAR {
     is_aws_igenome      // boolean: whether the genome files are from AWS iGenomes
     fasta               // channel: /path/to/fasta
     use_sentieon_star   // boolean: whether star alignment is accelerated with Sentieon
+    align_mode          // string : usually Local, but EndToEnd is recommended to SLAM-PE
 
     main:
 
@@ -45,17 +46,17 @@ workflow ALIGN_STAR {
     ch_star_out = null
     if (use_sentieon_star) {
 
-        SENTIEON_STAR_ALIGN(reads, index, gtf, star_ignore_sjdbgtf, seq_platform, seq_center)
+        SENTIEON_STAR_ALIGN(reads, index, gtf, star_ignore_sjdbgtf, seq_platform, seq_center, align_mode)
         ch_star_out = SENTIEON_STAR_ALIGN
 
     } else if (is_aws_igenome) {
 
-        STAR_ALIGN_IGENOMES(reads, index, gtf, star_ignore_sjdbgtf, seq_platform, seq_center)
+        STAR_ALIGN_IGENOMES(reads, index, gtf, star_ignore_sjdbgtf, seq_platform, seq_center, align_mode)
         ch_star_out = STAR_ALIGN_IGENOMES
 
     } else {
 
-        STAR_ALIGN(reads, index, gtf, star_ignore_sjdbgtf, seq_platform, seq_center)
+        STAR_ALIGN(reads, index, gtf, star_ignore_sjdbgtf, seq_platform, seq_center, align_mode)
         ch_star_out = STAR_ALIGN
 
     }
