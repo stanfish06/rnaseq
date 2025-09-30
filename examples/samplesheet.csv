@@ -1,0 +1,3 @@
+sample,fastq_1,fastq_2,strandedness
+mTeSR,/home/zyyu/Desktop/zyyu_scratch_space/slamseq/01.RawData/CTRL/CTRL_1.fq.gz,/home/zyyu/Desktop/zyyu_scratch_space/slamseq/01.RawData/CTRL/CTRL_2.fq.gz,unstranded
+BMP,/home/zyyu/Desktop/zyyu_scratch_space/slamseq/01.RawData/B100/B100_1.fq.gz,/home/zyyu/Desktop/zyyu_scratch_space/slamseq/01.RawData/B100/B100_2.fq.gz,unstranded

@@ -1,0 +1,9 @@
+{
+    "input": "/home/zyyu/Desktop/zyyu_scratch_space/slamseq/samplesheet.csv",
+    "outdir": "/home/zyyu/Desktop/zyyu_scratch_space/slamseq/",
+    "fasta": "/home/zyyu/Desktop/lab_turbo_space/reference-genomes/human/GRCh38/GENCODE/v49/GRCh38.p14.primary_assembly.genome.fa.gz",
+    "gtf": "/home/zyyu/Desktop/lab_turbo_space/reference-genomes/human/GRCh38/GENCODE/v49/gencode.v49.primary_assembly.annotation.gtf.gz",
+    "star_align_mode": "EndToEnd",
+    "aligner": "star_salmon",
+    "save_align_intermeds": true
+}
