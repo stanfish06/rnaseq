@@ -393,6 +393,13 @@
                     "description": "Optionally accelerate STAR with Sentieon",
                     "fa_icon": "fas fa-running"
                 },
+                "star_align_mode": {
+                    "type": "string",
+                    "default": "Local",
+                    "description": "STAR alignment mode. Usually 'Local', but 'EndToEnd' is recommended for SLAM-PE (no soft clipping).",
+                    "enum": ["Local", "EndToEnd"],
+                    "fa_icon": "fas fa-align-center"
+                },
                 "pseudo_aligner": {
                     "type": "string",
                     "description": "Specifies the pseudo aligner to use - available options are 'salmon'. Runs in addition to '--aligner'.",

@@ -744,8 +744,9 @@ workflow RNASEQ {
         // Add summary, versions, and methods to the MultiQC input file list
         ch_multiqc_files = ch_multiqc_files
             .mix(ch_workflow_summary)
-            .mix(ch_collated_versions)
             .mix(ch_methods_description)
+            
+	// .mix(ch_collated_versions)
 
         // Provide MultiQC with rename patterns to ensure it uses sample names
         // for single-techrep samples not processed by CAT_FASTQ, and trims out
